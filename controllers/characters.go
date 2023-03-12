@@ -30,21 +30,6 @@ func (ctrl CharactersController) GetCharacters(ctx *gin.Context) {
 func (ctrl CharactersController) ListCharacters(ctx *gin.Context) {
 	p := utils.FormulatePagination(ctx)
 
-	// filter := ctx.Query("filter")
-	// filterby := ctx.Query("filterBy")
-
-	// if filter != "" && filterby != "" {
-	// 	response, err := repository.ListFilteredCharacters(p, filter, filterby)
-
-	// 	if err != nil {
-	// 		ctx.AbortWithStatusJSON(http.StatusBadRequest, gin.H{"message": "Cannot fetch characters"})
-	// 		return
-	// 	}
-
-	// 	ctx.JSON(http.StatusOK, gin.H{"data": response})
-	// 	return
-	// }
-
 	// get characters from repository
 	characters, err := repository.ListCharacters(p)
 
